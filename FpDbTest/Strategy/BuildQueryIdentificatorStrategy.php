@@ -10,6 +10,9 @@ class BuildQueryIdentificatorStrategy extends AbstractBuildQueryStrategy
      */
     public function replace($value): string
     {
+        if ($value == Database::SKIP) {
+            return $value;
+        }
         if (is_array($value)) {
             return implode(', ', array_map([$this, 'escapeIdentifier'], $value));
         }

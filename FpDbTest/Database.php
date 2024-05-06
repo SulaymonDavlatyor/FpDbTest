@@ -14,15 +14,15 @@ use Strategy\BuildQueryIntStrategy;
 
 class Database implements DatabaseInterface
 {
-    private array $params;
     public const SKIP = '__SKIP__';
-
+    private array $params;
     private mysqli $mysqli;
 
     public function __construct(mysqli $mysqli)
     {
         $this->mysqli = $mysqli;
     }
+    
     /**
      * @param string $query
      * @param array $args
